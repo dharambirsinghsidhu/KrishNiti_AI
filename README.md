@@ -1,4 +1,4 @@
-# A CNN and Entropy-Based Hybrid Model for Robust Deepfake Detection
+# KrishNiti AI | Agritech Data Unification & Optimization Platform
 
 <br>
 
