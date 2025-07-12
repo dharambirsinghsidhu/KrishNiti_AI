@@ -1,5 +1,4 @@
-# KrishNiti AI: Agritech Data Unification and Optimization Platform
-
+# KrishNiti AI: Data-Driven Agritech Intelligence
 <br>
 
 **Live Demo:  [Click Here for Live Demo](https://entropyvision-ai.streamlit.app/)** <div id="top"></div>
