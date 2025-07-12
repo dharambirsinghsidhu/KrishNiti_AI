@@ -1,4 +1,4 @@
-# KrishNiti AI | Agritech Data Unification & Optimization Platform
+# KrishNiti AI: Agritech Data Unification and Optimization Platform
 
 <br>
 
