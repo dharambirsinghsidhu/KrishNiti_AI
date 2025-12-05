@@ -30,7 +30,7 @@ Our hybrid model addresses this by combining the robust spatial feature extracti
 
 <br>
 
-## 🖼️ Visual Demonstration ('app2.py')
+## 🖼️ Visual Demonstration
 
 Here are some visuals showcasing the application's interface and capabilities:
 
@@ -40,21 +40,15 @@ Here are some visuals showcasing the application's interface and capabilities:
     <br>
     <p><b>Streamlit App Interface</b></p>
     <br>
-    <img src="./images/app2_interface.png" alt="Upload Interface" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <img src="./images/home.png" alt="Upload Interface" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
   </div>
   <hr style="border: none; background-color: #ccc; height: 0.1px; margin: 20px 0;">
-  <div style="flex: 1 1 300px; max-width: 48%; text-align: center; border: 1px solid #eee; padding: 5px;">
-    <br>
-    <p><b>Upload Image</b></p>
-    <br>
-    <img src="./images/app2_image_prediction.png" alt="Prediction Result" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-  </div>
-  <hr style="border: none; background-color: #ccc; height: 0.1px; margin: 20px 0;">
+  
   <div style="flex: 1 1 300px; max-width: 48%; text-align: center; border: 1px solid #eee; padding: 5px;">
     <br>
     <p><b>Prediction Details</b></p>
     <br>
-    <img src="./images/app2_prediction_details.png" alt="Prediction Result" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <img src="./images/prediction.png" alt="Prediction Result" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
   </div>
 </div>
 
@@ -65,21 +59,66 @@ Here are some visuals showcasing the application's interface and capabilities:
 
 ## 📊 Dataset
 
-The model was trained and evaluated on a comprehensive dataset consisting of **140,000 high-resolution images**, meticulously divided into:
-* **100,000 Training Images** (50,000 real, 50,000 fake)
-* **20,000 Validation Images** (10,000 real, 10,000 fake)
-* **20,000 Testing Images** (10,000 real, 10,000 fake)
+**1. Farmer Advisor Dataset (`farmer_advisor_dataset.csv`)**
 
-The images are sourced as follows:
-* **Real Images:** Acquired from the Flickr-Faces-HQ (FFHQ) dataset.
-* **Fake Images:** Generated using the state-of-the-art StyleGAN model.
+This dataset captures **farm-level environmental conditions, management practices, and outcomes** across **10,000 records**.  
+It is used to train and evaluate the **yield prediction**, **crop advisory**, and **sustainability scoring** components.
+
+#### **Key Columns**
+
+| Column Name | Description |
+|-------------|-------------|
+| **Farm_ID** | Unique identifier for each farm record. |
+| **Soil_pH** | Soil acidity/alkalinity level — used for crop–soil compatibility analysis. |
+| **Soil_Moisture** | Soil moisture percentage — crucial for water stress assessment. |
+| **Temperature_C** | Average temperature in °C at the farm. |
+| **Rainfall_mm** | Recent or seasonal rainfall in millimeters. |
+| **Crop_Type** | Crop grown (e.g., Wheat, Corn, Soybean, Rice). |
+| **Fertilizer_Usage_kg** | Fertilizer applied per unit area (kg). |
+| **Pesticide_Usage_kg** | Pesticide applied per unit area (kg). |
+| **Crop_Yield_ton** | Observed yield in tons — **primary target variable** for prediction. |
+| **Sustainability_Score** | Environmental/resource efficiency score — used for sustainability modeling. |
+
+#### **How Krishniti AI Uses This Dataset**
+
+- Trains ML models to **predict Crop_Yield_ton** and **Sustainability_Score** based on soil, weather, and farm inputs.  
+- Powers the **Crop Recommendation Agent**, optimizing soil–crop matching.
+- Supports the **Sustainability Optimization Agent**, advising on eco-friendly farming practices.
+- Generates dynamic, realistic UI insights like:  
+  - “Expected yield for given inputs”  
+  - “Predicted sustainability score”  
 
 <br>
 
-You can access the dataset used for this project on Kaggle here:
-**[Deepfake Image Detection Dataset](https://www.kaggle.com/datasets/xhlulu/140k-real-and-fake-faces)**
+**2. Market Researcher Dataset (`marketer_researcher_dataset.csv`)**
 
----
+This dataset captures **market dynamics**, including prices, demand/supply indicators, seasonality, and economic influences across **10,000 market snapshots**.
+
+#### **Key Columns**
+
+| Column Name | Description |
+|-------------|-------------|
+| **Market_ID** | Unique identifier for each market snapshot. |
+| **Product** | Crop/product name (e.g., Rice, Wheat, Corn). |
+| **Market_Price_per_ton** | Current market selling price (per ton). |
+| **Demand_Index** | Indicator of product demand (higher = stronger demand). |
+| **Supply_Index** | Indicator of market supply (higher = more supply). |
+| **Competitor_Price_per_ton** | Average competitor selling price. |
+| **Economic_Indicator** | Macro-economic condition score (cost pressure, profitability, etc.). |
+| **Weather_Impact_Score** | Effect of weather on market volatility and risk. |
+| **Seasonal_Factor** | Categorical (Low/Medium/High) indicator of seasonality impact. |
+| **Consumer_Trend_Index** | Measure of changing consumer preference for the product. |
+
+#### **How Krishniti AI Uses This Dataset**
+
+- Feeds the **Market Analysis Agent** to estimate:
+  - Expected revenue  
+  - Profitability  
+  - Market risk  
+- Helps rank crops by **economic viability**, not just agronomic suitability.  
+- Enables real-time recommendations like:  
+  - “Grow Crop X instead of Crop Y due to better demand and pricing this season.”  
+  - “High volatility detected — diversify crop selection.”
 
 <br>
 
@@ -104,7 +143,17 @@ The Krishniti AI platform is built around a sophisticated multi-agent system des
 <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 10px;">
     <div style="flex: 1 1 300px; max-width: 48%; text-align: center; border: 1px solid #eee; padding: 5px;">
         <div align="center">
-          <img src="./images/system_architecture_flow.png" alt="System Architecture Diagram" width="600"/>
+          <img src="./images/ai-agents.png" alt="System Architecture Diagram" width="600"/>
+        </div>    
+    </div>
+</div>
+
+<br>
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 10px;">
+    <div style="flex: 1 1 300px; max-width: 48%; text-align: center; border: 1px solid #eee; padding: 5px;">
+        <div align="center">
+          <img src="./images/dataflow.png" alt="System Architecture Diagram" width="600"/>
         </div>    
     </div>
 </div>
