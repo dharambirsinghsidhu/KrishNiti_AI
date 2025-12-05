@@ -269,49 +269,6 @@ Requirements for the software and other tools to build, test and push
 
 <br>
 
-## 📦 Model Download
-
-Due to the substantial size of our pre-trained deepfake detection model, it is not directly included in this repository. Instead, the application is configured to **automatically download the model from Google Drive** the first time it's run, or if the model file is not found locally. This ensures a smoother setup while keeping the repository lightweight.
-
-**How it works:**
-
-When you run `app2.py`, it will check for the presence of the model file (e.g., in a `models/` directory). If it's missing, a download process will be initiated, typically displaying progress in your terminal. Please ensure you have an active internet connection during the first run. The model will be saved to a designated folder (e.g., `models/` or `weights/`) within your project directory for future use.
-
-<br>
-
-**Download Trained Model:  [Click Here to Download Pre-Trained Model](https://drive.google.com/file/d/1xlTb2ToE82F4wAzTAJxRIejW4lX8bMEy/view?usp=drive_link)** <div id="top"></div>
-
----
-
-<br>
-
-## ▶️ Running the Application
-
-Once everything is installed, starting the app is simple:
-
-1.  Go to your project's main folder in your terminal.
-2.  Type this command and press Enter:
-    ```bash
-    streamlit run app2.py --server.enableCORS false --server.enableXsrfProtection false
-    ```
-3.  A new tab will automatically open in your web browser showing the application, usually at `http://localhost:8501`.
-
----
-
-<br>
-
-## 💡 Using the Deepfake Detector (EntropyVision)
-
-Our tool is designed for easy deepfake detection:
-
-1.  Start the Streamlit application in your browser.
-2.  **Upload any image** you want to verify.
-3.  The system will process it and show you whether it's **real or a deepfake**, complete with a **confidence level**.
-
----
-
-<br>
-
 ## 🤝 Contributing
 
 We warmly welcome contributions to this project! If you're interested in improving the model, enhancing the user interface, or adding new functionalities, please follow these general steps:
@@ -335,67 +292,6 @@ For any questions or collaborations, feel free to reach out to the project maint
 * **Dharambir Singh Sidhu:** dharambirsinghsidhu.work@gmail.com
 
 <br>
-
----
----
-
-<br>
-
-## 📚 Appendix: Alternative Web Interface (`app.py`)
-
-In addition to the Streamlit application, this project also includes an alternative web interface built with HTML/CSS and potentially powered by Flask (`app.py`). This interface offers a different approach to interacting with the deepfake detection model, showcasing flexibility in deployment options.
-
-<br>
-
-## 💡 How to Run the HTML/CSS Interface
-
-1.  **Ensure you have activated your virtual environment** (as described in "Local Setup and Installation").
-   
-2.  **Navigate to your project's root directory** in the terminal.
-   
-3.  **Install Python Dependencies:**
-
-    First, ensure your `pip` installer is up to date, then install the required Python libraries.
-
-    ```bash
-    pip install --upgrade pip
-    pip install -r requirements.txt
-    ```
-    
-4.  **Run the Flask application:**
-    ```bash
-    python app.py
-    ```
-7.  The application should then be accessible in your web browser, typically at `http://127.0.0.1:5000/` or a similar local address indicated in your terminal.
-
----
-
-<br>
-
-### 📸 Visual Demonstration ('app.py')
-
-<div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 10px;">
-  <div style="flex: 1 1 300px; max-width: 48%; text-align: center; border: 1px solid #eee; padding: 5px;">
-    <br>
-    <p><b>Web App Interface</b></p>
-    <br>
-    <img src="./images/app_interface.png" alt="Upload Interface" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-  </div>
-  <hr style="border: none; background-color: #ccc; height: 0.1px; margin: 20px 0;">
-  <div style="flex: 1 1 300px; max-width: 48%; text-align: center; border: 1px solid #eee; padding: 5px;">
-    <br>
-    <p><b>Upload Image</b></p>
-    <br>
-    <img src="./images/app_image_prediction.png" alt="Prediction Result" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-  </div>
-  <hr style="border: none; background-color: #ccc; height: 0.1px; margin: 20px 0;">
-  <div style="flex: 1 1 300px; max-width: 48%; text-align: center; border: 1px solid #eee; padding: 5px;">
-    <br>
-    <p><b>Prediction Details</b></p>
-    <br>
-    <img src="./images/app_prediction_details.png" alt="Prediction Result" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-  </div>
-</div>
 
 ---
 
