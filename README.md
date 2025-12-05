@@ -7,11 +7,9 @@
 
 ## 📄 Overview
 
-Krishniti AI revolutionizes Indian agriculture by delivering a **multi-agent AI platform** designed to combat climate uncertainty, unify fragmented agricultural data, and drive sustainable, profitable farming practices. Traditional farming often grapples with unpredictable environmental conditions, fragmented information, and the challenge of balancing economic viability with ecological responsibility. Our innovative solution addresses these critical pain points, empowering farmers with actionable, real-time insights.
+Krishniti AI is a multi-agent platform transforming Indian agriculture by tackling climate uncertainty, fragmented data, and sustainability challenges. It provides farmers with real-time, actionable insights to improve productivity and profitability.
 
-This platform leverages advanced AI to integrate diverse data streams, transforming raw environmental, crop, and market data into intelligent recommendations. By doing so, Krishniti AI aims to mitigate risks associated with climate change, optimize resource utilization, and significantly enhance farmer livelihoods through data-driven decision-making.
-
-Our hybrid model addresses this by combining the robust spatial feature extraction capabilities of DenseNet-121 with the statistical regularities identified through Shannon entropy, capturing inconsistencies inherent in GAN-generated images.
+By integrating environmental, crop, and market data, the system delivers intelligent recommendations that reduce climate risks, optimize resources, and support data-driven farming.
 
 ---
 
@@ -19,13 +17,15 @@ Our hybrid model addresses this by combining the robust spatial feature extracti
 
 ## ✨ Key Features
 
-* **Modular Multi-Agent Architecture:** Engineered a robust 6-agent OOP architecture, seamlessly integrating environmental, crop, market, and sustainability metrics for scalable intelligence.
-* **Centralized ACID-Compliant Database:** Designed and implemented a robust SQLite database for inter-agent communication, ensuring data integrity and reliable long-term memory.
-* **Data-Driven "Green Score" System:** Developed an innovative "Green Score" system providing real-time eco-impact insights to promote responsible, environmentally friendly farming.
-* **Pre-trained Hindi Voice Assistant:** Integrated a Hindi Voice Assistant, enhancing platform accessibility and engagement for rural Indian farmers.
-* **Optimized Farm-to-Consumer Sales:** Strategized integration with an Urban Food Desert Detection system to streamline direct sales, increasing farmer profits and food access.
-* **Predictive Analytics for Yield & Sustainability:** Utilizes machine learning (e.g., RandomForestRegressor) to predict crop yield, optimal resource usage, and sustainability scores.
-* **Balanced Impact Recommendations:** The Decision Integration Agent combines insights to generate holistic recommendations, optimizing both financial returns and ecological footprint.
+- **AI Crop Recommendations:** Identifies the best crops using farm conditions, yield potential, and sustainability metrics.
+- **Multi-Agent Architecture:** Six coordinated agents handle environment analysis, market intelligence, and decision integration.
+- **Environmental & Market Analysis:** Scores soil conditions, evaluates rainfall/temperature, and assesses price, demand, and competition.
+- **Profit & Sustainability Insights:** Predicts yield, estimates revenue, and provides a 0–100 sustainability score with optimized input usage.
+- **Streamlit Dashboard:** Clean, interactive interface with persistent farm profiles stored in SQLite.
+- **ML-Powered Predictions:** Random Forest models drive accurate yield, resource, and impact predictions.
+- **Scalable OOP Design:** Modular agent classes enable easy expansion with new crops, data sources, or logic.
+- **Business Value:** Boosts yield, profit, and long-term sustainability through science-backed, data-driven farming.
+
 ---
 
 <br>
@@ -69,15 +69,15 @@ It is used to train and evaluate the **yield prediction**, **crop advisory**, an
 | Column Name | Description |
 |-------------|-------------|
 | **Farm_ID** | Unique identifier for each farm record. |
-| **Soil_pH** | Soil acidity/alkalinity level — used for crop–soil compatibility analysis. |
-| **Soil_Moisture** | Soil moisture percentage — crucial for water stress assessment. |
+| **Soil_pH** | Soil acidity/alkalinity level - used for crop–soil compatibility analysis. |
+| **Soil_Moisture** | Soil moisture percentage - crucial for water stress assessment. |
 | **Temperature_C** | Average temperature in °C at the farm. |
 | **Rainfall_mm** | Recent or seasonal rainfall in millimeters. |
 | **Crop_Type** | Crop grown (e.g., Wheat, Corn, Soybean, Rice). |
 | **Fertilizer_Usage_kg** | Fertilizer applied per unit area (kg). |
 | **Pesticide_Usage_kg** | Pesticide applied per unit area (kg). |
-| **Crop_Yield_ton** | Observed yield in tons — **primary target variable** for prediction. |
-| **Sustainability_Score** | Environmental/resource efficiency score — used for sustainability modeling. |
+| **Crop_Yield_ton** | Observed yield in tons - **primary target variable** for prediction. |
+| **Sustainability_Score** | Environmental/resource efficiency score - used for sustainability modeling. |
 
 #### **How Krishniti AI Uses This Dataset**
 
@@ -118,7 +118,7 @@ This dataset captures **market dynamics**, including prices, demand/supply indic
 - Helps rank crops by **economic viability**, not just agronomic suitability.  
 - Enables real-time recommendations like:  
   - “Grow Crop X instead of Crop Y due to better demand and pricing this season.”  
-  - “High volatility detected — diversify crop selection.”
+  - “High volatility detected - diversify crop selection.”
 
 <br>
 
@@ -166,14 +166,17 @@ The Krishniti AI platform is built around a sophisticated multi-agent system des
 
 This project leverages a focused set of key technologies:
 
-* **Python:** The foundational programming language.
-* **TensorFlow & Keras:** For building and running the hybrid deep learning model (DenseNet-121).
-* **Streamlit:** For the interactive web application interface (`app2.py`).
-* **Flask:** For the alternative web interface (`app.py`).
-* **NumPy:** Essential for high-performance numerical computing.
-* **OpenCV (cv2) / Pillow:** For image processing and manipulation.
-* **`gdown`:** Used for programmatic download of the large pre-trained model.
-* **Jupyter Notebook:** For model development, training, and experimentation.
+* **Streamlit:** Interactive web dashboard for farmer inputs and AI-driven recommendations.
+* **Python 3.x:** Core programming language for agents, pipelines, and backend logic.
+* **Scikit-learn:** Used for Random Forest models powering yield prediction and sustainability scoring.
+* **Pandas:** Handles data processing, cleaning, and CSV dataset loading.
+* **NumPy:** Performs numerical operations for environmental scoring and resource optimization.
+* **SQLite:** Persistent local database for farm profiles, inputs, and recommendation history.
+* **SQLAlchemy / sqlite3:** Manages database connection, queries, and ORM-like interactions.
+* **OOP Python Classes:** Implements 6 modular AI agents following clean architecture and SRP principles.
+* **Custom Data Pipelines:** Orchestrated through the `SustainableFarmingSystem` for multi-agent coordination.
+* **Jupyter:** Used for dataset exploration, feature engineering, and model training.
+* **Git & GitHub:** Version control, and project repository hosting.
 
 ---
 
@@ -181,33 +184,28 @@ This project leverages a focused set of key technologies:
 
 ## 📂 Project Structure
 
-All core files for this project are located in the root directory:
+All core files for this project are organized in the root directory:
 
-   ```bash
-├── images/                  # Contains screenshots and visual assets used in this README.
-│   ├── app2_image_prediction.png
-│   ├── app2_interface.png
-│   ├── app2_prediction_details.png
-│   ├── app_image_prediction.png
-│   ├── app_interface.png
-│   ├── app_prediction_details.png
-│   └── system_architecture_flow.png
-├── static/                  # Static assets for the Flask web application (app.py).
-│   ├── deepfake_hero.jpeg
-│   ├── logo.png
-│   ├── style.css
-│   ├── style1.css
-│   └── team.jpg
-├── templates/               # HTML template files for the Flask web application (app.py).
-│   ├── index.html
-│   └── result.html
-├── Hybrid model.ipynb       # Jupyter Notebook containing the complete model training, evaluation, and experimentation.
-├── LICENSE                  # Specifies the legal terms under which the project can be used and distributed.
-├── README.md                # This README file, providing a comprehensive overview and setup instructions for the project.
-├── app.py                   # Flask Web Application: The backend logic for the HTML/CSS web interface.
-├── app2.py                  # Streamlit Application: The main script for our interactive deepfake detection web interface.
-└── requirements.txt         # Lists all Python dependencies required to run the project.
-  ```
+```bash
+├── images/                           # Visual assets and system diagrams used in the README
+│   ├── ai-agents.png                 # Diagram showing the multi-agent architecture
+│   ├── dataflow.png                  # End-to-end system dataflow illustration
+│   ├── home.png                      # Screenshot of the main interface/dashboard
+│   └── prediction.png                # Screenshot of prediction/recommendation output
+│
+├── app.py                            # Main application script for the Krishniti AI system
+├── app.ipynb                         # Notebook exploration of the application logic
+├── sustainable_farming_system.py     # Core multi-agent architecture and orchestration
+├── sustainable_farming_system.ipynb  # Notebook for system development, testing, and debugging
+│
+├── farmer_advisor_dataset.csv        # Dataset containing farm-level environmental and input data
+├── marketer_researcher_dataset.csv   # Dataset containing market, demand, and economic indicators
+├── farming_agents.db                 # SQLite database storing persistent farm profiles and history
+│
+├── requirements.txt                  # Python dependencies required to run the project
+├── LICENSE                           # License information for legal usage and distribution
+└── README.md                         # Main documentation and setup instructions
+```
 
 ---
 
@@ -228,11 +226,11 @@ Requirements for the software and other tools to build, test and push
 1.  **Clone the Repository:**
    
     ```bash
-    git clone https://github.com/dharambirsinghsidhu/EntropyVision_Deepfake_Detector.git
-    cd EntropyVision_Deepfake_Detector
+    git clone https://github.com/dharambirsinghsidhu/Krishniti-AI.git
+    cd Krishniti-AI
     ```
 
-3.  **Create and Activate a Virtual Environment:**
+2.  **Create and Activate a Virtual Environment:**
 
     It's highly recommended to use a virtual environment to manage project dependencies.
 
@@ -249,7 +247,7 @@ Requirements for the software and other tools to build, test and push
         source venv/bin/activate
         ```
 
-4.  **Install Python Dependencies:**
+3.  **Install Python Dependencies:**
 
     First, ensure your `pip` installer is up to date, then install the required Python libraries.
 
@@ -259,8 +257,13 @@ Requirements for the software and other tools to build, test and push
     pip install streamlit
     ```
 
-End with an example of getting some data out of the system or using it
-for a little demo
+4.  **Run the Application:**
+
+    Launch the Streamlit interface:
+
+    ```bash
+    streamlit run app.py
+    ```
 
 ---
 
