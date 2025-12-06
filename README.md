@@ -227,7 +227,7 @@ Requirements for the software and other tools to build, test and push
    
     ```bash
     git clone https://github.com/dharambirsinghsidhu/Krishniti-AI.git
-    cd Krishniti-AI
+    cd KrishNiti_AI_Agritech_Intelligence
     ```
 
 2.  **Create and Activate a Virtual Environment:**
